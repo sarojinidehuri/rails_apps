@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loginpage</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style type="text/css" rel="stylesheet">
+  	#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    text-align: center;
+    height: 56px;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 3000;
+	}
+  	#footer {
+    /*position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;*/
+    background-color: #fff;
+    text-align: center;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size:12px;
+    margin:0px -9px -9px -9px;
+	}
+  #logo{
+    height:54px;
+    width:60px;
+  }
+  .fl{
+    float:left;
+    clear:left;
+  }
+  #logo_img{
+    height:100%;
+    width:100%;
+  }
+  .fr{
+    float: right;
+  }
+  </style>
+</head>
+<body>
+<div id=header>
+    <div id = "logo" class = "fl">
+      <a href = "/home"><%= image_tag("whatsapp.png", id:'logo_img', alt: "Edit Entry" ) %></a>
+    </div>
+  	<b id="heading"></b>
+    <div class="fr">
+        <% if !session[:username].present? %>
+          <a href="/login"><button>Login</button></a>
+          <a href="/sign_up"><button>Sign-up</button></a>
+        <% else %>
+          <a href="/logout"><button>Logout</button></a>
+          <a href="/listing"><button>Listing</button></a> 
+          <a href="/show"><button>Orders</button></a>
+        <% end %>
+    </div>
+</div>
+
+<%= yield %>
+
+
+<div id=footer>
+	<p>© Copyright 2016. All Rights Reserved by Andolasoft.pvt.ltd..</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<style>
+			.list {
+		        width: 360px;
+		        padding: 8% 0 0;
+		        margin: auto;
+		        min-height: 500px;
+		      }
+		       .tb {
+			        position: relative;
+			        z-index: 1;
+			        background: #FFFFFF;
+			        margin: 0 auto 100px;
+			        padding: 45px;
+			        text-align: center;
+			        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+			      }
+			body { 
+				  background-image: url(assets/city_night.jpg); 
+				  /*-webkit-background-size: cover;
+				  -moz-background-size: cover;
+				  -o-background-size: cover;*/
+				  background-size:100%;      
+				}
+				.panel-default {
+					opacity: 0.8;
+					margin-top:30px;
+					z-index: 99999;
+					padding-top: 50px;
+					text-align: center;
+					height: 650px;
+				}
+		</style>
+		<script type="text/javascript">
+			$("#heading").html("Welcome to your page");
+		</script>
+	</head>
+	<body>
+		<div class="panel-default">
+			<div class="list">
+				<h4 class="tb">welcome to your page : <%= session[:username] %></h4>
+	<!-- 			<a href="/logout"><button>logout</button></a>
+				<a href="/listing"><button>Listing</button></a> -->
+			</div>
+		</div>
+	</body>
+</html>

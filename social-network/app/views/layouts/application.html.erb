@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SocialNetwork</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id=header>
+    		<div id = "logo" class = "fl">
+     			 <a href = "/home"><%= image_tag("logo.png", id:'logo_img' ) %></a>
+    		</div>
+  	<b id="heading"></b>
+    <div class="fr">
+        <% if !session[:username].present? %>
+          <a href="/login"><button class="btn">Login</button></a>
+          <a href="/sign_up"><button class="btn">Sign-up</button></a>
+        <% else %>
+          <a href="/logout"><button class="btn">Logout</button></a>
+          <a href="/listing"><button class="btn">Listing</button></a> 
+          <a href="/show"><button class="btn">Orders</button></a>
+        <% end %>
+    </div>
+</div>
+<%= yield %>
+	<div id=footer>
+		<p>© Copyright 2016. All Rights Reserved by Andolasoft.pvt.ltd..</p>
+	</div>
+
+</body>
+</html>

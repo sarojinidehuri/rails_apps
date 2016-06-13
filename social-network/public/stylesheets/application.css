@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+	background-image: url(../images/3.blur.jpg);
+	background-size: 100%;
+	}
+.print{
+	opacity: 0.8;
+	margin-top: 90px;
+	color: #4e2c37;
+	font-family: italic;
+	text-align: center;
+	font-size: 100px;
+	}
+	#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    text-align: center;
+    height: 66px;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 3000;
+	}
+  	#footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    text-align: center;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size:12px;
+    color: #b36a82;
+  	font-family: italic;
+    /*margin:0px -9px -9px -9px;*/
+    margin-top: 10px;
+	}
+  #logo{
+    height:56px;
+    width:90px;
+  }
+  .fl{
+    float:left;
+    clear:left;
+  }
+  #logo_img{
+    height:100%;
+    width:100%;
+  }
+  .fr{
+    float: right;
+  }
+  #heading{
+  	padding-top: 10px;
+  	color: #b36a82;
+  	font-size: 29px;
+  	font-family: italic;
+  }
+  .btn{
+    border-radius: 15px;
+    background: #b36a82;
+    background: -moz-linear-gradient(top,  #ea8a02 ,#b36a82);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ea8a02), to(#b36a82));
+    border: 1px solid #badff3 !important;
+    font: bold 11px/14px Verdana, Tahomma, Geneva;
+    text-shadow: rgba(0,0,0,0.2) 0 1px 0px;
+    color: #fff;
+    -moz-box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    -webkit-box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    margin-left: 12px;
+    margin-top: 12px;
+    float: right;
+    padding: 7px 21px;
+    cursor: pointer;
+  }

@@ -1,0 +1,13 @@
+<div class="bg">
+		  <div class="form">
+			  
+			    <%= form_tag('validate', method: :post) do -%>
+			      <%= text_field_tag 'username','', placeholder: 'username', :required => true%>
+			      <%= password_field_tag 'password','', placeholder: 'password', :required => true%>
+			      <%= submit_tag 'Login', class:"button" %>
+			    <% end -%>
+		  </div>
+</div>
+<script type="text/javascript">
+		$("#heading").html("Login page");
+</script>

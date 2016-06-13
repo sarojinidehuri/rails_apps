@@ -1,0 +1,32 @@
+	<div class="bg">
+            <div class="form1">
+	             <table class="tb">
+	             	  <tr class="tb">
+                 		 <th class="tb">
+                  			  User_id
+                 		 </th>
+		                  <th class="tb">
+		                    Order_name
+		                  </th>
+		                  <th class="tb">
+		                    Name
+		                  </th>
+		                  </th>
+				             <th colspan="2" style="text-align:center" class="tb">Action
+				           </th>
+                <% @orders.each do |u| %>
+                  <tr class="tb">
+                       <td class="tb">
+                          <%=u.user_id%>
+                       </td>  
+                       <td class="tb">
+                         <%=u.order_name%>
+                       </td>
+                       <td class="tb"><%=u.user.name%></td>
+                       <td class="tb"><%= link_to 'Edit', "/edit/#{u.id}" %></td>
+                       <td class="tb"><%= link_to 'Delete', "/delete/#{u.id}" ,method: :destroy ,data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+	             </table>
+      </div>
+</div>

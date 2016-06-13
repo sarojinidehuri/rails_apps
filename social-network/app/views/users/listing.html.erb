@@ -1,0 +1,46 @@
+ <div class="bg">
+    <div class="form2">
+        <table class="tb">
+                <tr class="tb">
+                  <th class="tb">
+                    Name
+                  </th>
+                  <th class="tb">
+                    Email
+                  </th>
+                  <th class="tb">
+                    Age
+                  </th>
+                  <th class="tb">
+                    Phone No.
+                  </th>
+                  <th class="tb">
+                    Address
+                  </th>
+                  <th colspan="2" style="text-align:center" class="tb">Action
+                  </th>
+                    </tr>
+                    <% @users.each do |u| %>
+                      <tr class="tb">
+                       <td class="tb">
+                          <%=u.name%>
+                       </td>  
+                       <td class="tb">
+                         <%=u.email%>
+                       </td>
+                       <td class="tb">
+                         <%=u.age%>
+                       </td>
+                       <td class="tb">
+                         <%=u.phone_no%>
+                       </td>
+                       <td class="tb">
+                         <%=u.address%>
+                       </td>
+                       <td class="tb"><%= link_to 'Edit', "/edit/#{u.id}" %></td>
+                       <td class="tb"><%= link_to 'Delete', "/delete/#{u.id}" ,method: :destroy ,data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+             </table>
+     </div>
+</div>

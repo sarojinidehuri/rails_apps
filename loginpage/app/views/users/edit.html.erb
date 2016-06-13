@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign_up form</title>
+	<style>
+
+			.login-page {
+			  width: 360px;
+			  padding: 8% 0 0;
+			  margin: auto;
+			}
+			.form {
+			  position: relative;
+			  z-index: 1;
+			  background: #FFFFFF;
+			  max-width: 360px;
+			  margin: 100px auto;
+			  padding: 45px;
+			  text-align: center;
+			  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+			}
+			.form input {
+			  font-family: "Roboto", sans-serif;
+			  outline: 0;
+			  background: #f2f2f2;
+			  width: 100%;
+			  border: 0;
+			  margin: 0 0 10px;
+			  padding: 10px;
+			  box-sizing: border-box;
+			  font-size: 12px;
+			}
+			.form .button {
+			  font-family: "Roboto", sans-serif;
+			  text-transform: uppercase;
+			  outline: 0;
+			  background: #4CAF50;
+			  width: 100%;
+			  border: 0;
+			  padding: 15px;
+			  color: #FFFFFF;
+			  font-size: 12px;
+			  cursor: pointer;
+			}
+			.button:hover,.button:active,.button:focus {
+			  background: #43A047;
+			}
+			 body { 
+         	 background-image: url(assets/city_night.jpg); 
+	          /*-webkit-background-size: cover;
+	          -moz-background-size: cover;
+	          -o-background-size: cover;*/
+	          background-size:120%;      
+	        }
+	        .panel-default {
+	          opacity: 0.8;
+	          margin-top:30px;
+	          z-index: 99999;
+	          padding-top: 50px;
+	          text-align: center;
+	          height: 679px;
+	        }
+			.fl{
+				float:;
+			}
+			.fr{
+				float:right;
+			}
+			.cb{
+				clear:both;
+			}
+			.t{
+				font-size: 12px;
+			}
+			.red{
+				color: #ff0000;
+				font-size: 9px;
+				font-style: italic;
+			}
+	</style>
+	<script style="text/javascript">
+		$('.message a').click(function(){
+  			 $('.form').animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+		$("#heading").html("Sign_up page");
+	</script>
+</head>
+<body>
+	<div class="panel-default">
+	<div class="login-page form">
+		<!-- <h2><%= flash[:notice] %></h2> -->
+		<%= form_for @user, url: "/update/#{@user.id}", method: :patch do |f| %>
+			<% if @user.errors.any? %>
+				<div id="error_explanation">
+					<p><%= pluralize(@user.errors.count, "error") %> prohibited this is user from being saved: </p>
+					 <ul class="red">
+					    <% @user.errors.full_messages.each do |msg| %>
+					      <li><%= msg %></li>
+					    <% end %>
+					 </ul>
+				</div>
+			<% end %>
+			<table>
+			    <tr><td class="t">Name : </td><td><%= f.text_field :name, :required => true%></td></tr>
+			    <tr><td class="t">Email : </td><td><%= f.text_field :email , :required => true%></td></tr>
+			    <tr><td class="t">Username : </td><td><%= f.text_field :username , :required => true%></td></tr>
+			    <tr><td class="t">Age : </td><td><%= f.text_field :age , :required => true%></td></tr>
+			    <tr><td class="t">Phone_no : </td><td><%= f.text_field :phone_no , :required => true%></td></tr>
+			    <tr><td class="t">Address : </td><td><%= f.text_field :address , :required => true%></td></tr>
+			    <tr>
+			    	<td  style="text-align:center"><%= f.submit 'Update', class:"button" , :required => true%></td>
+			    	<td style="text-align:center"><a href="listing"><%= button_tag 'cancel', class:"button", :required => true %></a></td>
+			    </tr>
+			</table>
+		<% end %>
+	</div>
+	</div>
+</body>
+</html>

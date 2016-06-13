@@ -1,0 +1,28 @@
+<%= form_for @book, url: @book.id.present? ? "update/#{@book.id}" : "save", method: 'post', remote: !@book.id.present? ? true : false do |f| %>
+      <table>
+          <tr><td>Name : </td><td><%= f.text_field :name, class: "tf", :required => true%></td></tr>
+          <tr><td>Title : </td><td><%= f.text_field :title, class: "tf" , :required => true%></td></tr>
+          <tr><td>Auther : </td><td><%= f.text_field :auther , class: "tf", :required => true%></td></tr>
+          <tr>
+          <td>Privecy : </td>
+          <td>
+           <!--  <select>
+              <% get_privecy.each do |list| %>
+                <option>
+                  <%= list %>
+                </option>
+              <% end %>
+            </select> -->
+         <%= f.select "privecy", "<option>private</option><option selected='selected'>public</option><option>global</option>".html_safe%>
+          </td>
+          </tr>
+            <td  style="text-align:center">
+            <% if !@book.id.present? %>
+            <%= f.submit 'Register book', class: "ts"%>
+              <% else %>
+              <%= f.submit 'Update book', class: "ts"%>
+            <% end %>
+            </td>
+          </tr>
+      </table>
+<% end %>

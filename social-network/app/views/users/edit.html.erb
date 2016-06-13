@@ -1,0 +1,29 @@
+<div class="bg">
+		<div class="form1">
+			<%= form_for @user, url: "/update/#{@user.id}", method: :patch do |f| %>
+				<% if @user.errors.any? %>
+					<div id="error_explanation">
+					<p><%= pluralize(@user.errors.count, "error") %> prohibited this is user from being saved: </p>
+					 <ul class="red">
+					    <% @user.errors.full_messages.each do |msg| %>
+					      <li><%= msg %></li>
+					    <% end %>
+					 </ul>
+					</div>
+				<% end %>
+			<table>
+			    <tr><td class="t">Name : </td><td><%= f.text_field :name, :required => true%></td></tr>
+			    <tr><td class="t">Email : </td><td><%= f.text_field :email , :required => true%></td></tr>
+			    <tr><td class="t">Username : </td><td><%= f.text_field :username , :required => true%></td></tr>
+			    <tr><td class="t">Password : </td><td><%= f.password_field :password , :required => true%></td></tr>
+			    <tr><td class="t">Age : </td><td><%= f.text_field :age , :required => true%></td></tr>
+			    <tr><td class="t">Phone_no : </td><td><%= f.text_field :phone_no , :required => true%></td></tr>
+			    <tr><td class="t">Address : </td><td><%= f.text_field :address , :required => true%></td></tr>
+			    <tr>
+			    	<td  style="text-align:center"><%= f.submit 'Update', class:"button" , :required => true%></td>
+			    	<td style="text-align:center"><a href="listing"><%= button_tag 'cancel', class:"button", :required => true %></a></td>
+			    </tr>
+			</table>
+		<% end %>
+	</div>
+</div>

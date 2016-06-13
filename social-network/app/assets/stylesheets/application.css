@@ -1,0 +1,181 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+	background-image: url(../images/3.blur.jpg);
+	background-size: 100%;
+	}
+.print{
+	opacity: 0.8;
+	margin-top: 90px;
+	color: #4e2c37;
+	font-family: italic;
+	text-align: center;
+	font-size: 100px;
+	}
+	#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    text-align: center;
+    height: 66px;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 3000;
+	}
+  	#footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -80px;
+    background-color: #fff;
+    text-align: center;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size:12px;
+    color: #b36a82;
+  	font-family: italic;
+    /*margin:0px -9px -9px -9px;*/
+    margin-top: 10px;
+	}
+  #logo{
+    height:56px;
+    width:90px;
+  }
+  .fl{
+    float:left;
+    clear:left;
+  }
+  #logo_img{
+    height:100%;
+    width:100%;
+  }
+  .fr{
+    float: right;
+  }
+  #heading{
+  	padding-top: 10px;
+  	color: #b36a82;
+  	font-size: 29px;
+  	font-family: italic;
+  }
+  .btn{
+    border-radius: 15px;
+    background: #b36a82;
+    background: -moz-linear-gradient(top,  #ea8a02 ,#b36a82);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ea8a02), to(#b36a82));
+    border: 1px solid #badff3 !important;
+    font: bold 11px/14px Verdana, Tahomma, Geneva;
+    text-shadow: rgba(0,0,0,0.2) 0 1px 0px;
+    color: #fff;
+    -moz-box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    -webkit-box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    box-shadow: inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+    margin-left: 12px;
+    margin-top: 12px;
+    float: right;
+    padding: 7px 21px;
+    cursor: pointer;
+  }
+  .bg {
+		  /*position: fixed;
+		  left: 0;
+		  top: 0;*/
+		  width: 100%;
+		  height: 100%;
+		  margin-top: 142px;   
+		}
+
+.form {
+		 /* position: relative;*/
+		  width: 250px;
+		  margin: 0 auto;
+		  background: rgba(130,130,130,.3);
+		  padding: 20px 22px;
+		  border: 1px solid;
+		  border-top-color: rgba(255,255,255,.4);
+		  border-left-color: rgba(255,255,255,.4);
+		  border-bottom-color: rgba(60,60,60,.4);
+		  border-right-color: rgba(60,60,60,.4);
+		  text-align: center;
+		}
+form input, form button {
+		  width: 212px;
+		  border: 1px solid;
+		  border-bottom-color: rgba(255,255,255,.5);
+		  border-right-color: rgba(60,60,60,.35);
+		  border-top-color: rgba(60,60,60,.35);
+		  border-left-color: rgba(80,80,80,.45);
+		  background-color: rgba(0,0,0,.2);
+		  background-repeat: no-repeat;
+		  padding: 8px 24px 8px 10px;
+		  font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+		  letter-spacing: .075em;
+		  color: #fff;
+		  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+		  margin-bottom: 19px;
+		  text-align: center;
+		}
+.t{
+			
+			padding: 8px 24px 8px 10px;
+			font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+			letter-spacing: .075em;
+			color: #fff;
+			text-shadow: 0 1px 0 rgba(0,0,0,.1);
+			margin-bottom: 19px;
+			font-size: 12px;
+			text-align: left;
+			margin-left: -20px;
+		}
+.red{
+	color: red;
+}
+.form1 {
+		 /* position: relative;*/
+		  width: 500px;
+		  margin: 0 auto;
+		  background: rgba(130,130,130,.3);
+		  padding: 10px 12px;
+		  border: 1px solid;
+		  border-top-color: rgba(255,255,255,.4);
+		  border-left-color: rgba(255,255,255,.4);
+		  border-bottom-color: rgba(60,60,60,.4);
+		  border-right-color: rgba(60,60,60,.4);
+		  text-align: center;
+		}
+.form2 {
+		 /* position: relative;*/
+		  width: 700px;
+		  margin: 0 auto;
+		  background: rgba(130,130,130,.3);
+		  padding: 10px 12px;
+		  border: 1px solid;
+		  border-top-color: rgba(255,255,255,.4);
+		  border-left-color: rgba(255,255,255,.4);
+		  border-bottom-color: rgba(60,60,60,.4);
+		  border-right-color: rgba(60,60,60,.4);
+		  text-align: center;
+		}
+.tb{
+
+		border: 1px solid rgba(130,130,130,.3);
+        padding: 12px;
+        border-collapse: collapse;
+       }

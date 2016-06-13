@@ -1,0 +1,28 @@
+<html>
+<head>
+	<script type= text/javascript>
+		$(document).ready(function () {
+			$("#submit").click(function () {
+				$("#result").html("");
+				$("#result").append("<b>Addition of <%= @value1%> and <%= @value2%> : <%= @add %></b><br><br><b>Substraction of <%= @value1%> and <%= @value2%> : <%= @sub %></b><br><br><b>Division of <%= @value1%> and <%= @value2%> : <%= @div %></b><br><br><b>Multiplication of <%= @value1%> and <%= @value2%> : <%= @mul %></b><br><br>");
+				// body...
+			});
+			// body...
+		});
+	</script>
+</head>
+<body>
+	<h1>Results are</h1>
+
+	<%= text_field_tag 'text_field1', @value1 %><br><br>
+	<%= text_field_tag 'text_field2', @value2 %><br><br>
+	<input type="button" id="submit" value="submit"><br>
+	<p id="result" ></p>
+
+	<%= form_tag('/auth') do -%>
+		<%=text_field_tag "username", ""%>
+	  <div><%= submit_tag 'Save' %></div>
+	<% end -%>
+	
+</body>
+</html>
