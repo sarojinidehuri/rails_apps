@@ -1,0 +1,31 @@
+ <table class="tb">
+            <tr>
+              <th>
+                User_id
+              </th>
+              <th>
+                Standard
+              </th>
+              <th colspan="5" style="text-align:center">Subject_name
+              </th>
+            </tr>
+            <% @subjects.each do |u| %>
+              <tr>
+                   <td>
+                      <%= u.user_id %>
+                   </td>  
+                   <td>
+                     <%= u.standard_name %>
+                   </td>
+                   <td>
+                     <%= u.subject_name %>
+                   </td>
+                   <!-- <td><%= link_to 'Edit', "/edit/#{u.id}", data: { remote: true, toggle: "modal", target: "#myModal" } %></td>
+
+                   <td><%= link_to 'Delete', "/delete/#{u.id}"  ,method: :delete ,data: { confirm: 'Are you sure?',remote: true}  %>
+                   </td>
+                   <td><%= link_to 'Show', "javascript:void(0);", :onclick => "show_book_detail('#{u.id}')" , method: :get ,data: {toggle: "modal", target: "#show_data" } %>
+                   </td> -->
+              </tr>
+            <% end %>
+      </table>

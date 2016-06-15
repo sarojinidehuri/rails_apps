@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
 		before_action :check_user, only: [:dashboard] 
+
 	def sign_up
 		@user = User.new
 	end
 	def home
-		
+		# render 'stories/blogs'
+		@stories = Story.all
+		@comments = Comment.all
 	end
 	def login
-   
+   		 
  	end
  		 def validate
 		      @username = params[:username]
@@ -28,6 +31,7 @@ class UsersController < ApplicationController
 		      session[:username] = user.username
 		      session[:user_id] = user.id
 		      p '============success================'
+		      p session[:user_id]
 		      p params
 		      flash[:notice] = "Login first....!!!"
 		      flash[:color]= "valid"
@@ -37,7 +41,7 @@ class UsersController < ApplicationController
 		      p params
 		      flash[:notice] = "Something is wrong...."
 		      flash[:color]= "invalid"
-		      redirect_to root_path
+		      redirect_to login_path
 		    end
 		    
 		  end

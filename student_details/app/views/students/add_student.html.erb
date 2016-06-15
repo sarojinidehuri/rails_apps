@@ -1,0 +1,13 @@
+<div class="blog">
+		<div class="box">
+		<%= form_for @student, url: "/valid_student" do |f| %>
+			      <%= f.text_field :student_name, :required => true, :class => "field" %><br><br>
+			      <%= f.text_field :student_age, :required => true, :class => "field" %>
+			      <%= f.select :gender, "<option>male</option><option>Female</option>".html_safe %>
+			      <%= f.select :subject_name, "<option>1</option><option selected='selected'>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>".html_safe %>
+			      <%= f.label :permission, "Permission Level" %>
+					<%#= f.select :permission, [ ["Read Only", "read"], ["IP Voice Telephony", "ip_voice"], ["IP Video Telephony", "ip_video_telephony"], ["Enterprise Gateways", "enterprise_gateways"], ["Consumer ATAs", "consumer_atas"], ["IP PBX", "ip_pbx"], ["Master of All", "all"] ], {prompt: "Select Permission Level"}, {:multiple => true, class: "input-lg"} %>
+			      <%= submit_tag 'Submit', class:"btn" %>
+			 <% end %>
+		</div>
+	</div>

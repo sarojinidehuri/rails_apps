@@ -1,0 +1,30 @@
+<table>
+	<tr>
+		<td><%= link_to 'Add student', '/add_student' %></td>
+		<td><%= link_to 'Add teacher','/add_teacher' %></td>
+		<td><%= link_to 'Add class', '/add_standard' %></td>
+		<td><%= link_to 'Add subject','/add_subject' %></td>
+	</tr>
+	<tr>
+		<td>
+			<div class="box1">
+				<%= render(:partial => "students/student_list") %>
+			</div>
+		</td>
+		<td>
+			<div class="box1">
+				<%= render(:partial => "teachers/teacher_list") %>
+			</div>
+		</td>
+		<td>
+			<div class="box">
+				<%= render(:partial => "standards/standard_list") %>
+			</div>
+		</td>
+		<td>
+			<div class="box">
+				<%= render(:partial => "subjects/subject_list") %>
+			</div>
+		</td>
+	</tr>
+</table>

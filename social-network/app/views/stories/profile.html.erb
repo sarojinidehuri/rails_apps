@@ -1,6 +1,7 @@
-<h1>Stories</h1>
-<% @stories.each do |story| %>
-  <p>
-    <%= link_to(story.title, story.url, target: "_blank") %> - <%= link_to("Show Page", story) %>
-  </p>
-<% end %>
+ <div class="form blog">
+    <%= render(:partial => "display") %>
+ </div>
+ <div class="form2">
+ 	<%= render(:partial => "blogs") %>
+ </div>
+

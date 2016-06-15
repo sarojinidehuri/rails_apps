@@ -4,9 +4,15 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'stories#profile'
+  # root 'stories#profile'
   match '/profile', :to => 'stories#profile', :via => :get
-  match '/display', :to => 'stories#show', :via => :get
+  match '/display', :to => 'stories#display', :via => :get
+  match '/create', :to => 'stories#create', :via => :post
+   # match '/index', :to => 'stories#index', :via => :get
+  match '/cmnt/:id', :to => 'comments#cmnt', :via => :get
+  match '/delete_comment/:id', :to => 'comments#destroy', :via => :delete
+  match '/dlt/:id', :to => 'stories#destroy', :via => :delete
+
 
   resources :stories do
     resources :comments
@@ -16,8 +22,8 @@ Rails.application.routes.draw do
     resources :comments
   end
   # root 'welcome#index'
-  # root 'users#home'
-
+  root 'users#home'
+  match '/home', :to => 'users#home', :via => :get
   match '/login', :to => 'users#login', :via => :get
   match '/sign_up', :to => 'users#sign_up', :via => :get
   match '/create', :to => 'users#create', :via => :post

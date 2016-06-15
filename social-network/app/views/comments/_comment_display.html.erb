@@ -1,0 +1,32 @@
+<table>
+            <tr>
+              <th>
+                User_id
+              </th>
+              <th>
+                Blog_id
+              </th>
+              <th>
+                Blog_description
+              </th>
+              <th colspan="2" style="text-align:center">Action
+              </th>
+            </tr>
+            <% @comments.each do |u| %>
+              <tr>
+                   <td>
+                      <%=u.user_id %>
+                   </td>  
+                   <td>
+                     <%=u.story_id %>
+                   </td>
+                   <td>
+                     <%=u.comment %>
+                   </td>
+                   <td><%= link_to 'Edit', "/edit/#{u.id}" %></td>
+
+                   <td><%= link_to 'Delete', "/delete_comment/#{u.id}"  ,method: :delete ,data: { confirm: 'Are you sure?',remote: true}  %>
+                   </td>
+              </tr>
+            <% end %>
+</table>
