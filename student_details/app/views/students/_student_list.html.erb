@@ -12,10 +12,10 @@
               <th>
                 Gender
               </th>
-              <th>
-                Standard_name
+              <th>Details
               </th>
-              <th colspan="5" style="text-align:center">Subject_name
+              <th colspan="2">
+                Action
               </th>
             </tr>
             <% @students.each do |u| %>
@@ -33,15 +33,11 @@
                      <%= u.gender %>
                    </td>
                    <td>
-                     <%= u.standard_name %>
+                     <%= u.assign_id %>
                    </td>
-                   <td>
-                     <%= u.subject_name %>
-                   </td>
-                   <!-- <td><%= link_to 'Edit', "/edit/#{u.id}", data: { remote: true, toggle: "modal", target: "#myModal" } %></td>
-
-                   <td><%= link_to 'Delete', "/delete/#{u.id}"  ,method: :delete ,data: { confirm: 'Are you sure?',remote: true}  %>
-                   </td>
+                   <td><%= link_to 'Edit', "/edit/#{u.id}" %></td>
+                   <td><%= link_to 'Delete', "/delete/#{u.id}" ,method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+                   <!-- 
                    <td><%= link_to 'Show', "javascript:void(0);", :onclick => "show_book_detail('#{u.id}')" , method: :get ,data: {toggle: "modal", target: "#show_data" } %>
                    </td> -->
               </tr>

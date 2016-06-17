@@ -49,6 +49,12 @@ class UsersController < ApplicationController
 			 		render 'sign_up'
 			 end
 	end
+	def logout
+			    session[:username] = nil
+			    session[:user_id] = nil
+			    redirect_to '/login'
+	 end
+	 
 	 private
 		def user_params
 			params.require(:user).permit(:name, :email, :username, :password, :confirm_password, :phone_no, :address)

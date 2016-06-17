@@ -1,0 +1,23 @@
+ <table class="tb">
+            <tr>
+              <th>
+                Class
+              </th>
+              <th colspan="2">
+                Subject
+              </th> 
+            </tr>
+            <% @assigns.each do |u| %>
+              <tr>
+                   <td>
+                   <%#=debug u%>
+
+                   <%#=debug u.standard%>
+                     <%= u.standard.standard_name %>
+                   </td>
+                   <td>
+                     <%= u.subject.subject_name %>
+                   </td>
+              </tr>
+           <% end %>
+</table>

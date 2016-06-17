@@ -1,4 +1,5 @@
-	<div class="blog">
+	<div class="panel-default">
+		<div class="login-page">
 		<div class="box">
 			<%= form_tag('validate', method: :post) do -%>
 			      <%= text_field_tag 'username','', placeholder: 'username', :required => true, :class => "username"%><br><br>
@@ -7,4 +8,5 @@
 			      <%= link_to 'Sign_up', "/sign_up", class:"btn2" %>
 			 <% end -%>
 		</div>
+	</div>
 	</div>

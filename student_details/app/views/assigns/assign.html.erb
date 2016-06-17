@@ -1,0 +1,28 @@
+<div class="blog">
+		<div class="box1">
+		<%= form_for @assign, url: "assigns/create" do |f| %>
+			<table>
+			    <tr>
+			        <td>Select class:</td>
+			        <td>
+			        	<%@standard = Standard.order("id DESC")%>
+			        	<%=f.select "standard_id", options_from_collection_for_select(@standard, "id", "standard_name")%>
+			        	 <%#= f.collection_select :standard_id, Standard.find(:all), :id, :standard_name, :prompt => "Select a Class" %>
+					</td>
+				</tr>
+			    <tr>
+			    	<td>Select subject:</td>
+			    	<td>
+			      		<%@subject = Subject.order("id DESC")%>
+			        	<%=f.select "subject_id", options_from_collection_for_select(@subject, "id", "subject_name")%>
+			        	<%#= f.collection_select :subject_id, Subject.find(:all), :id, :subject_name, :prompt => "Select a Subject" %>
+			        </td>
+			    </tr>
+			    <tr><td><%=f.submit'Assign', class:"btn" %></td></tr>
+			 </table>
+		<% end %>
+	</div>
+</div>
+<div id="standard_listing" class="form">
+	<%= render(:partial => "assign_list")%>
+</div>

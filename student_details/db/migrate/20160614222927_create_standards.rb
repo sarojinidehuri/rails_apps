@@ -6,7 +6,6 @@ class CreateStandards < ActiveRecord::Migration
     	t.integer :student_id
     	t.integer :teacher_id
     	t.string :standard_name
-      t.string :subject_name
       t.timestamps
     end
   end

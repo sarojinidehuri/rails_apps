@@ -1,0 +1,23 @@
+<div class="blog">
+		<div class="box1">
+		<%= form_for @user, url: "/validate" do |f| %>
+			<table>
+			     <tr>
+			        <td>Select class:</td>
+			        <td>
+			        <%@standard = Standard.order("id DESC")%>
+			        <%=select_tag "standard", options_from_collection_for_select(@standard, "id", "standard_name")%>
+					</td>
+				</tr>
+			     <tr>
+			      <td>Select subject:</td>
+			      <td>
+			      	<%@subject = Subject.order("id DESC")%>
+			        <%=select_tag "subject", options_from_collection_for_select(@subject, "id", "subject_name")%>
+			        </td>
+			     </tr>
+			      <tr><td><%= submit_tag 'Submit', class:"btn" %></td></tr>
+			 </table>
+		<% end %>
+	</div>
+</div>

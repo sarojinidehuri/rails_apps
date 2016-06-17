@@ -1,6 +1,6 @@
 <div class="blog">
 		<div class="box1">
-		<%= form_for @student, url: "/students/create" do |f| %>
+		<%= form_for @student, url: "/update/#{@student.id}" do |f| %>
 			<table>
 			      	<tr>
 			      		<td>Student name:</td>
@@ -19,12 +19,10 @@
 			      		<td><%= f.text_field :assign_id, :required => true, :class => "field" %></td>
 			     	</tr>
 			     	 <tr>
-			      		<td><%= submit_tag 'Submit', class:"btn" %></td>
+			      		<td><%= f.submit 'Update', class:"btn" %></td>
+			    		<td><a href="/add_student"><%= button_tag 'cancel', class:"btn" %>
 			      	</tr>
 			 </table>
 		<% end %>
 	</div>
-</div>
-<div id="standard_listing" >
-	<%= render(:partial => "student_list")%>
 </div>

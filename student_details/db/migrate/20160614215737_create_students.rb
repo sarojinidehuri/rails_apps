@@ -4,6 +4,7 @@ class CreateStudents < ActiveRecord::Migration
     	t.integer :user_id
     	t.integer :standard_id
     	t.integer :subject_id
+      t.integer :assign_id
     	t.string :student_name
     	t.integer :student_age
     	t.string :gender

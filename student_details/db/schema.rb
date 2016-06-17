@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614233417) do
+ActiveRecord::Schema.define(version: 20160616011032) do
+
+  create_table "assigns", force: true do |t|
+    t.integer  "standard_id"
+    t.integer  "subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assigns", ["standard_id"], name: "index_assigns_on_standard_id", using: :btree
+  add_index "assigns", ["subject_id"], name: "index_assigns_on_subject_id", using: :btree
 
   create_table "standards", force: true do |t|
     t.integer  "user_id"
@@ -19,7 +29,6 @@ ActiveRecord::Schema.define(version: 20160614233417) do
     t.integer  "student_id"
     t.integer  "teacher_id"
     t.string   "standard_name"
-    t.string   "subject_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160614233417) do
     t.integer  "user_id"
     t.integer  "standard_id"
     t.integer  "subject_id"
+    t.integer  "assign_id"
     t.string   "student_name"
     t.integer  "student_age"
     t.string   "gender"

@@ -18,11 +18,22 @@ Rails.application.routes.draw do
   match '/sign_up', :to => 'users#sign_up', :via => :get
   match '/create', :to => 'users#create', :via => :post
   match '/validate', :to => 'users#validate', :via => :post
+  match '/logout', :to => 'users#logout', :via => :get
+
+  match '/assign', :to => 'assigns#assign', :via => :get
+  match 'assigns/create', :to => 'assigns#create', :via => :post
+
+
 
   match '/dashboard', :to => 'users#dashboard', :via => :get
   match '/add_student', :to => 'students#add_student', :via => :get
   match 'valid_student', :to => 'students#valid_student', :via => :post
   match 'students/create', :to => 'students#create', :via => :post
+  match '/edit/:id', :to => 'students#edit_student', :via => :get
+  match '/delete/:id', :to => 'students#destroy', :via => :delete
+  match '/update/:id', :to => 'students#update', :via => :patch
+
+
 
   match '/add_teacher', :to => 'teachers#add_teacher', :via => :get
   match 'valid_teacher', :to => 'teachers#valid_teacher', :via => :post
@@ -33,6 +44,9 @@ Rails.application.routes.draw do
 
   match '/add_subject', :to => 'subjects#add_subject', :via => :get
   match 'subject/create', :to => 'subjects#create', :via => :post
+
+
+
 
   # Example resource route with options:
   #   resources :products do
