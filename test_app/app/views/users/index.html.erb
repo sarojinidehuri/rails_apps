@@ -1,0 +1,26 @@
+<% if @user.blank? %>
+	<p>There is no list</p>
+<% else %>
+	<p>List of users</p>
+	<table>
+		<tr>
+			<th>Name:</th>
+			<th>Address:</th>
+			<th>Phone_no:</th>
+			<th colspan='3'></th>
+		</tr>
+		<% @user.each do |u| %>
+			<tr>
+				<td><%= u.name %></td>
+				<td><%= u.address %></td>
+				<td><%= u.phone_no %></td>
+				<td>
+					<%= link_to 'Show', "/show/#{u.id}" %>
+					<%= link_to 'Edit', "/edit/#{u.id}" %>
+					<%= link_to 'Delete', "/delete/#{u.id}", method: :delete %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
+<p><%= link_to "Add new Book", 'new' %></p>
